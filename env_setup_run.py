@@ -81,23 +81,23 @@ def main():
     activate_virtual_environment(env_dir)
     add_project_root_to_site_packages(env_dir)
     
-    print("Step 1: Starting to install dependencies...\n")
+    print("Step 1: Started to install dependencies...\n")
     install_dependencies(env_dir)
     print("Step 1: Dependencies installed.\n\n")
     
-    print("Step 2: Starting data cleaning...\n")
+    print("Step 2: Started data cleaning...\n")
     run_script(env_dir, 'scripts/clean_data.py')
     print("Step 2: Data cleaned.\n\n")
     
-    print("Step 3: Starting data analysis...\n")
+    print("Step 3: Started data analysis...\n")
     run_script(env_dir, 'scripts/analyze_data.py')
     print("Step 3: Data analysis completed.\n\n")
     
-    print("Step 4: Starting regression analysis...\n")
+    print("Step 4: Started regression analysis...\n")
     run_script(env_dir, 'scripts/linear_regression.py')
-    print("Step 4: Regression analysis completed.\n\n")
+    print("\nStep 4: Regression analysis completed.\n\n")
     
-    print("Step 5: Starting tests...\n")
+    print("Step 5: Started tests...\n")
     run_tests(env_dir)
     print("Step 5: Tests completed.\n\n")
 

@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from httpx import ASGITransport
 from app.main import app
 
+# Test endpoint that gets the top N highest paid employees
 @pytest.mark.asyncio
 async def test_get_top_n_highest_paid_employees():
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as ac:
@@ -15,6 +16,7 @@ async def test_get_top_n_highest_paid_employees():
     assert data[1]["Name"] == "Oliver Queen" # Checking the second highest paid employee
     assert data[2]["Name"] == "Barry Allen"  # Checking the third highest paid employee
 
+# Test endpoint that gets the number of employees in a specific department
 @pytest.mark.asyncio
 async def test_get_number_of_employees_in_department():
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as ac:

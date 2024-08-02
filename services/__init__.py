@@ -1,1 +1,1 @@
-from .data_analyzer import DataAnalyzer
+from .employee_data_analyzer import EmployeeDataAnalyzer

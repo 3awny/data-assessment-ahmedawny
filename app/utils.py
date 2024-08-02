@@ -1,7 +1,7 @@
 
 from config import *
 import pandas as pd
-from services import DataAnalyzer
+from services import EmployeeDataAnalyzer
 
-def get_data_analyzer():
-    return DataAnalyzer('app/data/cleaned_data.csv')
+def get_employee_data_analyzer():
+    return EmployeeDataAnalyzer('app/data/employee_cleaned_data.csv')

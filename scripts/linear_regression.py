@@ -7,8 +7,6 @@ import matplotlib.pyplot as plt
 import io
 import os
 
-print("Linear Regression Analysis Script is Starting...")  # Initial debug statement
-
 def load_data():
     # Load sample dataset from a multi-line string
     data = """
