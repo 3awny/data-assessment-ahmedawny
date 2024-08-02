@@ -6,7 +6,7 @@ This project is designed to clean and analyze employee and house price data, and
 ## Project Structure
 
 ```
-fastapi_project/
+project-directory/
 │
 ├── app/
 │   ├── __init__.py
@@ -38,25 +38,25 @@ fastapi_project/
 
 ## Setup
 
-### Clone the github repository
+### 1. Clone the github repository
 
 ```sh
 git clone https://github.com/3awny/data-assessment-ahmedawny.git
 cd data-assessment-ahmedawny
 ```
 
-### Requirements
+### 2. Requirements
 
 - Python 3.10
 - `pip` (Python package installer)
 
-### Create virtual environment
+### 3. Create virtual environment
 
 ```bash
 python3.10 -m venv venv
 ```
 
-### Install Dependencies
+### 4. Install Dependencies
 
 Ensure you have Python installed, then install the required packages:
 
@@ -64,7 +64,7 @@ Ensure you have Python installed, then install the required packages:
 pip install -r requirements.txt
 ```
 
-### Data Cleaning and Preparation
+### 5. Data Cleaning and Preparation
 
 To clean the data, run the data cleaning script:
 
@@ -74,7 +74,7 @@ python scripts/clean_data.py
 
 This script handles missing values, outliers, and standardizes data formats.
 
-### Data Analysis and Aggregation
+### 5. Data Analysis and Aggregation
 
 To analyze the cleaned data, run the data analysis script:
 
@@ -84,7 +84,7 @@ python scripts/analyze_data.py
 
 This script calculates the average salary per department, finds the top 3 highest-paid employees, and determines the number of employees in each department.
 
-### Regression Analysis
+### 6. Regression Analysis
 
 To perform a linear regression analysis on house prices, run the regression analysis script:
 
@@ -94,9 +94,9 @@ python scripts/linear_regression.py
 
 This script loads the dataset, preprocesses it, splits it into training and testing sets, trains the model, evaluates the model, and visualizes the results.
 
-### Running the FastAPI Application
+### 7. Running the FastAPI Application (Not a necessary step)
 
-To start the FastAPI application, run:
+To start the FastAPI application, run: 
 
 ```bash
 uvicorn app.main:app --reload
@@ -104,7 +104,7 @@ uvicorn app.main:app --reload
 
 This will start the server, and you can access the API at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-### Running Tests
+### 8. Running Tests
 
 To run the tests for the API endpoints, execute the following command:
 
@@ -112,7 +112,7 @@ To run the tests for the API endpoints, execute the following command:
 pytest
 ```
 
-### Run Everything
+## Run Everything
 
 To setup environment and run all scripts and tests in one go, you can use the provided python script `env_setup_run.py`
 
