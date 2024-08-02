@@ -96,11 +96,10 @@ pytest
 
 ### Run Everything
 
-To run all scripts and tests in one go, you can use the provided shell script `run_all.sh`. Ensure the script has execute permissions:
+To run all scripts and tests in one go, you can use the provided python script `env_setup_run.py`. Ensure the script has execute permissions:
 
 ```bash
-chmod +x run_all.sh
-./run_all.sh
+python env_setup_run.py
 ```
 
 ## API Endpoints
@@ -120,16 +119,3 @@ chmod +x run_all.sh
 - **Query Parameters**: 
   - `department` (string): Department name to retrieve the number of employees.
 - **Response**: JSON object with department name and number of employees.
-
-## Acknowledgments
-
-This project utilizes the following libraries:
-
-- pandas
-- numpy
-- scikit-learn
-- matplotlib
-- fastapi
-- uvicorn
-- pytest
-- httpx
