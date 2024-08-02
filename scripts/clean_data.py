@@ -67,7 +67,7 @@ def clean_data(input_file: str, output_file: str):
     df = load_data(input_file)  # Load data from input file
     df = fill_missing_ids(df)  # Fill missing IDs
     df = handle_missing_values(df)  # Handle missing values
-    df = handle_outliers(df)  # Remove outliers
+    df = handle_outliers(df)  # Handle outliers
     df = recalibrate_ids(df)  # Recalibrate IDs
     df = standardize_data_formats(df)  # Standardize data formats
     df.to_csv(output_file, index=False)  # Save cleaned data to output file
