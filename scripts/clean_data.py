@@ -25,19 +25,27 @@ def handle_missing_values(df):
     df = df.fillna({'Department': 'not_available', 'Name': 'not_available'})
     return df
 
-# Function to remove outliers in the 'Salary' column
-def remove_outliers(df):
-    salary_mean = df['Salary'].mean()  # Calculate mean of 'Salary'
-    salary_std = df['Salary'].std()  # Calculate standard deviation of 'Salary'
+# Function to handle outliers in the 'Salary' column
+def handle_outliers(df):
+    # Calculate department-wise mean and standard deviation of 'Salary'
+    dept_stats = df.groupby('Department')['Salary'].agg(['mean', 'std']).reset_index()
+    dept_stats.columns = ['Department', 'Dept_Salary_Mean', 'Dept_Salary_Std']
+    
+    # Merge the department statistics back to the original dataframe
+    df = pd.merge(df, dept_stats, on='Department', how='left')
     
     # Calculate Z-scores for 'Salary'
-    df['Z_Score_Salary'] = (df['Salary'] - salary_mean) / salary_std
+    df['Z_Score_Salary'] = (df['Salary'] - df['Dept_Salary_Mean']) / df['Dept_Salary_Std']
     
-    # Filter out rows where Z-score is within -3 and 3, and 'Salary' is non-negative
-    df = df[(np.abs(df['Z_Score_Salary']) <= 3) & (df['Salary'] >= 0)]
+    # Identify outliers based on Z-scores
+    outliers = (np.abs(df['Z_Score_Salary']) > 3) | (df['Salary'] < 0)
     
-    # Drop the 'Z_Score_Salary' column as it is no longer needed
-    df = df.drop(columns=['Z_Score_Salary'])
+    # Replace outliers with the department mean salary
+    df.loc[outliers, 'Salary'] = df.loc[outliers, 'Dept_Salary_Mean']
+    
+    # Drop the unnecessary columns
+    df = df.drop(columns=['Z_Score_Salary', 'Dept_Salary_Mean', 'Dept_Salary_Std'])
+    
     return df
 
 # Function to recalibrate 'ID' values sequentially
@@ -59,7 +67,7 @@ def clean_data(input_file: str, output_file: str):
     df = load_data(input_file)  # Load data from input file
     df = fill_missing_ids(df)  # Fill missing IDs
     df = handle_missing_values(df)  # Handle missing values
-    df = remove_outliers(df)  # Remove outliers
+    df = handle_outliers(df)  # Remove outliers
     df = recalibrate_ids(df)  # Recalibrate IDs
     df = standardize_data_formats(df)  # Standardize data formats
     df.to_csv(output_file, index=False)  # Save cleaned data to output file

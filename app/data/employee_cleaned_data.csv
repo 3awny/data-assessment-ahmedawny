@@ -13,8 +13,9 @@ ID,Name,Date_of_Birth,Salary,Department
 12,Barry Allen,,1000000.0,engineering
 13,Arthur Curry,1983-10-10,65000.0,not_specified
 14,Hal Jordan,,72000.0,hr
-15,Lois Lane,1980-08-20,58000.0,finance
-16,James Gordon,1975-09-15,52000.0,hr
-17,Selina Kyle,1985-06-07,63500.0,sales
-18,Oliver Queen,1982-09-20,1200000.0,engineering
-19,Roy Harper,1988-07-10,63500.0,marketing
+15,Victor Stone,1989-11-15,27875.0,marketing
+16,Lois Lane,1980-08-20,58000.0,finance
+17,James Gordon,1975-09-15,52000.0,hr
+18,Selina Kyle,1985-06-07,63500.0,sales
+19,Oliver Queen,1982-09-20,1200000.0,engineering
+20,Roy Harper,1988-07-10,63500.0,marketing
