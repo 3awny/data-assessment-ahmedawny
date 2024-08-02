@@ -28,7 +28,7 @@ project-directory/
 ├── scripts/
 │   ├── clean_data.py         # Script for cleaning data
 │   ├── analyze_data.py       # Script for data analysis and aggregation
-│   └── linear_regression.py  # Script for regression analysis
+│   └── linear_regression.py  # Script for regression analysis on house prices dataset
 │
 ├── env_setup_run.py       # Python script to setup environment & run all scripts and endpoint tests
 ├── .gitignore
