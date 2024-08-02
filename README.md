@@ -12,7 +12,7 @@ fastapi_project/
 │   ├── __init__.py
 │   ├── main.py               # Main FastAPI application
 │   ├── schemas.py            # Pydantic schemas
-│   ├── routes.py             # API routes
+│   ├── routes.py             # API endpoints
 │   ├── utils.py              # Utility functions for data processing
 │   ├── data/
 │   │   ├── employeee_raw_data.csv      # Raw CSV data
@@ -37,6 +37,24 @@ fastapi_project/
 ```
 
 ## Setup
+
+### Clone the github repository
+
+```sh
+git clone https://github.com/3awny/data-assessment-ahmedawny.git
+cd data-assessment-ahmedawny
+```
+
+### Requirements
+
+- Python 3.10
+- `pip` (Python package installer)
+
+### Create virtual environment
+
+```bash
+python3.10 -m venv venv
+```
 
 ### Install Dependencies
 
