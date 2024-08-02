@@ -15,22 +15,22 @@ fastapi_project/
 │   ├── routes.py             # API routes
 │   ├── utils.py              # Utility functions for data processing
 │   ├── data/
-│   │   ├── raw_data.csv      # Raw CSV data
-│   │   └── cleaned_data.csv  # Cleaned CSV data
+│   │   ├── employeee_raw_data.csv      # Raw CSV data
+│   │   └── employee_cleaned_data.csv  # Cleaned CSV data
 │   └── tests/
 │       ├── __init__.py
-│       └── test_api.py       # Unit tests
+│       └── test_api.py       # Unit tests (Pytest)
 │
 ├── services/
 │   ├── __init__.py
-│   ├── data_analyzer.py      # Data analysis class
+│   ├── employee_data_analyzer.py      # Employee data analysis class
 │
 ├── scripts/
 │   ├── clean_data.py         # Script for cleaning data
 │   ├── analyze_data.py       # Script for data analysis and aggregation
 │   └── linear_regression.py  # Script for regression analysis
 │
-├── run_all.sh                # Shell script to run all scripts and tests
+├── env_setup_run.py       # Python script to setup environment & run all scripts and endpoint tests
 ├── .gitignore
 ├── requirements.txt          # Python dependencies
 └── README.md                 # Project documentation
@@ -96,7 +96,7 @@ pytest
 
 ### Run Everything
 
-To run all scripts and tests in one go, you can use the provided python script `env_setup_run.py`. Ensure the script has execute permissions:
+To setup environment and run all scripts and tests in one go, you can use the provided python script `env_setup_run.py`
 
 ```bash
 python env_setup_run.py
