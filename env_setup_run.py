@@ -6,7 +6,7 @@ import venv
 def create_virtual_environment(env_dir, python_executable):
     """Create a virtual environment using the specified Python executable."""
     if not os.path.exists(env_dir):
-        print("Creating a virtual environment with Python 3.10...")
+        print(f"Creating a virtual environment with {python_executable}...")
         subprocess.check_call([python_executable, '-m', 'venv', env_dir])
     else:
         print("Virtual environment already exists. Skipping creation.")
@@ -69,13 +69,17 @@ def deactivate_virtual_environment():
 def main():
     env_dir = os.path.join(os.getcwd(), 'venv')
 
-    # Check for Python 3.10
-    python_executable = 'python3.10'
+    # Check for Python 3.11, if not available fallback to 3.10
+    python_executable = 'python3.11'
     try:
         subprocess.check_call([python_executable, '--version'])
     except subprocess.CalledProcessError:
-        print("Error: This script requires Python 3.10.")
-        sys.exit(1)
+        python_executable = 'python3.10'
+        try:
+            subprocess.check_call([python_executable, '--version'])
+        except subprocess.CalledProcessError:
+            print("Error: This script requires Python 3.10 or 3.11.")
+            sys.exit(1)
 
     create_virtual_environment(env_dir, python_executable)
     activate_virtual_environment(env_dir)

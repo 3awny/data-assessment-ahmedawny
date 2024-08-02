@@ -47,13 +47,13 @@ cd data-assessment-ahmedawny
 
 ### 2. Requirements
 
-- Python 3.10
+- Python 3.10 or 3.11
 - `pip` (Python package installer)
 
 ### 3. Create virtual environment
 
 ```bash
-python3.10 -m venv venv
+python3.11 -m venv venv
 ```
 
 ### 4. Install Dependencies
