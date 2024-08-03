@@ -1,5 +1,5 @@
-import pandas as pd  # Import the pandas library for data manipulation
-import numpy as np  # Import the numpy library for numerical operations
+import pandas as pd
+import numpy as np
 
 # Function to load data from a CSV file
 def load_data(file_path):
